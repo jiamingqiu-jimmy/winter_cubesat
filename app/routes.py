@@ -2,9 +2,12 @@ from app import app
 from flask import Flask, render_template, flash, redirect
 from app.forms import ContactForm
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('home.html', title='Home')
+    form = ContactForm()
+    if form.validate_on_submit():
+        return 'Form Posted.'
+    return render_template('index.html', title='Home', form=form)
 
 @app.route('/services')
 def services():
