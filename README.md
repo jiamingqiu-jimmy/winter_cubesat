@@ -35,7 +35,7 @@ source venv/bin/activate
 ```
 or
 ```
-export FLASK_APP=microblog.py
+export FLASK_APP=cubesite.py
 flask run
 ```
 
